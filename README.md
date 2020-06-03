@@ -1,11 +1,12 @@
-# Nest Keycloak Connect
+# Nest Keycloak Integration
 
 An adapter for [keycloak-nodejs-connect](https://github.com/keycloak/keycloak-nodejs-connect).
 
+Based on [@cenkce/nest-keycloak-connect](https://github.com/cenkce/nest-keycloak-connect) package.
 ## Features
 
 - Protect your resources using [Keycloak's Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/).
-- Simply add `@Resource` and `@Scopes` in your controllers and you're good to go.
+- Simply add `@Resource`, `@Scopes`, `@Roles` and `@PublicPath` in your controllers and you're good to go.
 - Compatible with [Fastify](https://github.com/fastify/fastify) platform.
 
 ## Installation
@@ -13,13 +14,13 @@ An adapter for [keycloak-nodejs-connect](https://github.com/keycloak/keycloak-no
 ### Yarn
 
 ```bash
-yarn add nest-keycloak-connect
+yarn add nest-keycloak-integration
 ```
 
 ### NPM
 
 ```bash
-npm install nest-keycloak-connect --save
+npm install nest-keycloak-integration --save
 ```
 
 ## Getting Started
@@ -28,7 +29,7 @@ Register the module in app.module.ts
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { KeycloakConnectModule, ResourceGuard, AuthGuard } from 'nest-keycloak-connect';
+import { KeycloakConnectModule, ResourceGuard, AuthGuard } from 'nest-keycloak-integration';
 
 @Module({
   imports: [KeycloakConnectModule.register({
@@ -65,7 +66,7 @@ export class AppModule {}
 Create Public Paths
 
 ```typescript
-import { Resource, Scopes, KeycloakService, Roles, KeycloakedRequest } from '@cenkce/nest-keycloak-connect';
+import { Resource, Scopes, KeycloakService, Roles, KeycloakedRequest } from '@cenkce/nest-keycloak-integration';
 import { Controller, Get, Delete, Put, Post, Param } from '@nestjs/common';
 
 @Controller()
@@ -130,7 +131,7 @@ Authorization Using **@Roles()** and **@Scopes()**
 
 
 ```typescript
-import { Resource, Scopes } from '@cenkce/nest-keycloak-connect';
+import { Resource, Scopes } from '@cenkce/nest-keycloak-integration';
 import { Controller, Get, Delete, Put, Post, Param } from '@nestjs/common';
 import { Product } from './product';
 import { ProductService } from './product.service';

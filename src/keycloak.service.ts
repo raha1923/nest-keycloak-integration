@@ -38,11 +38,10 @@ export class KeycloakService {
     );
 
     if (typeof res === 'string' && res.indexOf('access_token') !== -1) {
-      this.request.session.token = res;
       this.request.grant = await this.keycloak.grantManager.createGrant({
         "access_token": JSON.parse(res).access_token
       }) as any;
-      return true;
+      return this.request.grant;
     }
 
     return false;

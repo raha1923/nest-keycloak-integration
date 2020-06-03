@@ -1,10 +1,11 @@
 {
-  "name": "@cenkce/nest-keycloak-connect",
-  "version": "1.1.0",
+  "name": "nest-keycloak-integration",
+  "version": "1.1.3",
   "description": "keycloak-nodejs-connect module for Nest",
   "author": "John Joshua Ferrer <johnjoshuaferrer@disroot.org>",
   "contributors": [
-    "Cenk Cetinkaya <mail@cenkcetinkaya.com>"
+    "Cenk Cetinkaya <mail@cenkcetinkaya.com>",
+    "RaHa <mohammadraha313@gmail.com>"
   ],
   "license": "MIT",
   "scripts": {
@@ -16,6 +17,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
+  "private": false,
   "keywords": [
     "nestjs",
     "keycloak",
@@ -23,9 +25,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferrerojosh/nest-keycloak-connect"
+    "url": "https://github.com/raha1923/nest-keycloak-connect"
   },
-  "bugs": "https://github.com/ferrerojosh/nest-keycloak-connect/issues",
+  "bugs": "https://github.com/raha1923/nest-keycloak-connect/issues",
   "dependencies": {
     "reflect-metadata": "^0.1.12",
     "@nestjs/common": "^7.0.3",
