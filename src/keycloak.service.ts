@@ -9,6 +9,7 @@ import { KEYCLOAK_CONNECT_OPTIONS, KEYCLOAK_INSTANCE } from './constants';
 import { KeycloakedRequest } from './keycloaked-request';
 import { REQUEST } from '@nestjs/core';
 import { Keycloak } from 'keycloak-connect';
+import * as https from "https";
 
 @Injectable({ scope: Scope.REQUEST })
 export class KeycloakService {
@@ -34,6 +35,8 @@ export class KeycloakService {
           password: password,
         },
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        strictSSL: false,
+        agent: new https.Agent({rejectUnauthorized: false})
       },
     );
 
