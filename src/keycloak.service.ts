@@ -36,7 +36,6 @@ export class KeycloakService {
         },
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         strictSSL: false,
-        agent: new https.Agent({rejectUnauthorized: false})
       },
     );
 
